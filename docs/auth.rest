@@ -1,0 +1,28 @@
+POST http://127.0.0.1:8000/api/v1/auth/register
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Admin",
+    "email": "admin@mail.com",
+    "password": "12345"
+}
+
+
+### Perfil
+GET http://127.0.0.1:8000/api/v1/auth/perfil
+Accept: application/json
+Authorization: 
+
+### Login
+POST http://127.0.0.1:8000/api/v1/auth/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "admin@mail.com",
+    "password": "12345"
+}
+
+
+
