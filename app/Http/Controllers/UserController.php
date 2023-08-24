@@ -83,6 +83,6 @@ class UserController extends Controller
         $usuario = User::findOrFail($id);
         $usuario->delete();
 
-        return response()->json(["mensaje" => "Usuario Eliminado"])
+        return response()->json(["mensaje" => "Usuario Eliminado"]);
     }
 }

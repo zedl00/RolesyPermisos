@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AuthPassportController;
 use App\Http\Controllers\PermisoController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -24,6 +25,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+// Sanctum 
 Route::prefix('v1/auth')->group(function(){
     Route::post("/login", [AuthController::class, "funIngresar"]);
     Route::post("/register", [AuthController::class, "funRegistro"]);
@@ -35,6 +38,11 @@ Route::prefix('v1/auth')->group(function(){
     });
 });                  
 
+
+// Passport
+Route::post("/passport/login", [AuthPassportController::class, "funIngresar"]);
+Route::post("/passport/register", [AuthPassportController::class, "funRegistro"]);
+Route::get("/passport/profile", [AuthPassportController::class, "funPerfil"])->middleware('auth:api');
 
 // Users 
 Route::middleware('auth:sanctum')->group(function(){

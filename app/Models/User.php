@@ -44,4 +44,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function roles(){
+        return $this->belongsToMany(Roles::class);
+    }
+    
+    public function assignRole($role){
+        if(is_string($role)){
+            $role = Role::where("nombre", $role)->firstOrFail();
+        }
+        $this->role()->sync($role, false);
+     }
+    
+    public function permisos(){
+        return $this->role->map->permisos->flatten()->pluck("nombre")->unique();
+    }
 }

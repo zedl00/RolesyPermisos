@@ -14,7 +14,7 @@ GET http://127.0.0.1:8000/api/v1/auth/perfil
 Accept: application/json
 Authorization: Bearer 2|qynREPVWrp53Xr6eJWie5ermq1UXIuxIZioSXFko
 
-### Login
+### Login Sanctum
 POST http://127.0.0.1:8000/api/v1/auth/login
 Accept: application/json
 Content-Type: application/json
@@ -24,5 +24,17 @@ Content-Type: application/json
     "password": "12345"
 }
 
+### Login Passport
+POST http://127.0.0.1:8000/api/passport/login
+Accept: application/json
+Content-Type: application/json
 
+{
+    "email": "admin@mail.com",
+    "password": "12345"
+}
 
+### Perfil Passport
+GET http://127.0.0.1:8000/api/passport/profile
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZTQzZDIwMzRiMTg4MTZkOGQwMTQ2MTIxMDJhNGNiZWMyYjQ3YjUzNDE2MGExMTAxN2JiNTZkZjdhMjE4MDRkZGJmN2U0YmVmZDY1MjZjMmUiLCJpYXQiOjE2OTI4OTE1NDUuODAxOTExLCJuYmYiOjE2OTI4OTE1NDUuODAxOTEzLCJleHAiOjE3MjQ1MTM5NDUuNzkzNzU4LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.JqQwf5eMFjwKEcnhUJ9dB9qPc1H-edNIufMOI000gMx7wo7vADJIyoZ6nW0kIsCCavzM1YgmcsqCxu1v1fLuRzoJcQyAj-L_Dba1wphOUaxrPk3bq1X4o9W-wAyT6rhlDkUjmsl0XMkbA0dnjtpThBytAA36daHj7ePwNqLYWGARzPmQG_ictVs4d8BZD-Se67_2B-9xyjIJnaxrMQAnIq9NT3OIkhG2RfwVmsmoQbVEAlz-d3JzgwkFmn9xmNAFJ2qwNr3FJGTnhlvyDOsZCCIU67h0xWiMUv-hXYeEeJh_J2hB3e4CXkbZEbZqrYUuLZD7RSi_cU0o1laFg3yjKByjqPXS_8oje7JQnQ_XoxmfFjfAjtPqk-wzs4tWtPHVezMn-HAz2vhLdws2bum5XOqLTgiN5wGCXWqeXyTDfDIt4oPHJumFGlHrrLedcmkLF8e03XNP1cTXuGAc0pamrNTGUIHwCw7HBsId_YEpQn57oEgcMxMSUmcMCGt1Yip989dU1XpdAISgeR3jnfbV0R4pZCyK5qGSRC5DGfx_KWizh-Y_6JwBTBxm_-TPU8qrpEVgxX-igjgIA4Wyy1mKkEOtnIeLBgcYWxpFSlvajTevTao0JGVfeeMxgFZQtBWpHKuF9obqCyzw84NKCoCkMQ7FxmZF0exUORfatOr7Ycw
