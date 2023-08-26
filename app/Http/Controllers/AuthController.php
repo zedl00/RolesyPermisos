@@ -18,7 +18,7 @@ class AuthController extends Controller
 
         // Validar correo y password
         if(!Auth::attempt($credenciales)){
-            return response()->json(["mensaje" => "No Autenticado"], 401);
+            return response()->json(["mensaje" => "Credenciales Incorrectas"], 401);
         }
 
         // Generar Token
@@ -51,7 +51,6 @@ class AuthController extends Controller
         // Respuesta
 
         return response()->json(["mensaje" => "El Usuario ha sido registrado"], 201);
-
     }
 
     public function funPerfil() 

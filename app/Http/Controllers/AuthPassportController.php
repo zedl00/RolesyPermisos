@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -59,4 +60,8 @@ class AuthPassportController extends Controller
         return response()->json($usuario, 200);
     }
 
+    public function funCerrar(Request $request) {
+        $request->user()->tokens()->delete();
+        return response()->json(["mensaje" => "Logout"], 200);
+    }
 }

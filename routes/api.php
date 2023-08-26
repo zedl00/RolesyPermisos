@@ -43,6 +43,7 @@ Route::prefix('v1/auth')->group(function(){
 Route::post("/passport/login", [AuthPassportController::class, "funIngresar"]);
 Route::post("/passport/register", [AuthPassportController::class, "funRegistro"]);
 Route::get("/passport/profile", [AuthPassportController::class, "funPerfil"])->middleware('auth:api');
+Route::post("/passport/logout", [AuthPassportController::class, "funCerrar"])->middleware('auth:api');
 
 // Users 
 Route::middleware('auth:sanctum')->group(function(){
